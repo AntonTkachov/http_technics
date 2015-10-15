@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, skip: :all
   devise_scope :user do
     scope :users do
       get 'sign_in', controller: 'users/sessions', action: 'new', as: 'new_user_session'
@@ -8,4 +9,6 @@ Rails.application.routes.draw do
     end
     root to: 'users/sessions#new'
   end
+
+  resources :chat, only: [:index]
 end

@@ -22,5 +22,12 @@ module HttpTechnics
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.connection_types = {
+      short_polling: 'Short HTTP polling',
+      long_polling: 'Long HTTP polling',
+      streaming: 'HTTP streaming',
+      websockets: 'Websockets'
+    }
   end
 end

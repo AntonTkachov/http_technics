@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801232820) do
+ActiveRecord::Schema.define(version: 20151014231309) do
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "author_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "login",              default: "", null: false
     t.string   "encrypted_password", default: "", null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "connection_type"
   end
 
 end

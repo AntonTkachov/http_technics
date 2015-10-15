@@ -1,0 +1,9 @@
+.row
+  .col-sm-offset-2.col-sm-8.well.chat-window
+.row
+  .col-sm-offset-2.col-sm-8
+    form.form-horizontal
+      .col-sm-10
+        = text_field_tag :message, '', placeholder: 'Type your message here', class: 'form-control'
+      .col-sm-2.text-center
+        = submit_tag 'Send', class: 'btn btn-primary'
